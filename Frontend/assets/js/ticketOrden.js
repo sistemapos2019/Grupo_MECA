@@ -1,0 +1,2 @@
+let ticketPreparado;
+let ticketRapido;

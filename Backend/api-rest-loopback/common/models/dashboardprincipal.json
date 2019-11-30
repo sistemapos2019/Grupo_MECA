@@ -1,0 +1,59 @@
+{
+  "name": "dashboardprincipal",
+  "plural": "DashboardPrincipal",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "idOrden": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "Mesa": {
+      "type": "number"
+    },
+    "Mesero": {
+      "type": "string",
+      "required": true
+    },
+    "Cliente": {
+      "type": "string",
+      "required": true
+    },
+    "Total": {
+      "type": "number"
+    },
+    "Estado": {
+      "type": "string",
+      "required": true
+    },
+    "llevar": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "TiempoPreparado": {
+      "type": "number"
+    },
+    "Preparado": {
+      "type": "string"
+    },
+    "TiempoRapido": {
+      "type": "number"
+    },
+    "Rapido": {
+      "type": "string"
+    },
+    "tipo": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

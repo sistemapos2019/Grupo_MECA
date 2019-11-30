@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>ResBar</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <!-- incio del nav -->
+    <nav class="navbar navbar-light navbar-expand-md">
+        <div class="container-fluid"><a class="navbar-brand" href="dashboard.html">ResBar</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="dashboard.html">Inicio</a></li>
+                    <li id="Administrar" class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false"  href="#">Administrar</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('bitacora.html')">Bitacora</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('categorias.html')">Categorias</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('mesas.html')">Mesas</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('parametros.html')">Parámetros</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('productos.html')">Productos</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('registrarCompras.html')">Registrar Compras&nbsp;</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('usuario.html')">Usuarios</a></div>
+                    </li>
+                    <li id="Estadisticas" class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Estadisticas</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" id="inventario" onclick="redirigir('inventario.html')">Inventario</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" id="reporteCompras" onclick="redirigir('reportesCompras.html')">Reportes de compras</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" id="reporteVentas" onclick="redirigir('reporteVentas.html')">Reportes de ventas</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" id="ventasDiarias" onclick="redirigir('ventasDiarias.html')">Ventas Diarias</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" id="ventasSemanales" onclick="redirigir('ventasSemanales.html')">Ventas semanales</a></div>
+                    </li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" data-toggle="modal" href="#salir">Salir</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- fin del nav -->
+
+    <div class="container">
+        <div class="row mt-2" id="cabecera">
+            <div class="col">
+                <h1 class="text-lg-center" style="margin-top: 10px;">Parametros</h1>
+            </div>
+        </div>
+        <div class="alert alert-success collapse mb-4 shadow" role="alert" id="alert">
+            <span><strong>Se han modificado los datos exitosamente</strong></span>
+            <i id="btnCerrarAlert" class="fa fa-close close"></i>
+        </div>
+        <div class="row justify-content-center contenedor">
+            <div class="col">
+                <form class="row" onsubmit="modificarParametros(event)">
+                    <div class="form-group col-6">
+                        <div class="form-group row"><label class="col-md-3">Empresa:</label><input id="empresa"
+                                class="form-control form-control-sm input-estilo col-md-8" type="text"></div>
+                        <div class="form-group row"><label class="col-md-3">Descripción:</label><input id="descripcion"
+                                class="form-control form-control-sm input-estilo col-md-8" type="text"></div>
+                        <div class="form-group row"><label class="col-md-3">Dirección:</label><input id="direccion"
+                                class="form-control form-control-sm input-estilo col-md-8" type="text"></div>
+                        <div class="form-group row"><label class="col-md-3">Telefono:</label><input id="telefono"
+                                class="form-control form-control-sm input-estilo col-md-8" type="text"></div>
+                        <div class="form-group row"><label class="col-md-3">NIT:</label><input id="nit"
+                                class="form-control form-control-sm input-estilo col-md-8" type="text"></div>
+                        <div class="form-group row"><label class="col-md-3">Giro:</label><input id="giro"
+                                class="form-control form-control-sm input-estilo col-md-8" type="text"></div>
+                        <div class="form-group row"><label class="col-md-3">Entorno:</label><input id="entorno"
+                                class="form-control form-control-sm input-estilo col-md-8" type="text"></div>
+                    </div>
+                    <div class="form-group col-6">
+                        <div class="form-group"><label>Imprimir ticket de productos preparados</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="checkPrintP-1"
+                                        name="opciones"><label class="form-check-label" for="formCheck-1">Si</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="checkPrintP-2"
+                                        name="opciones"><label class="form-check-label" for="formCheck-1">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group"><label>Imprimir ticket de productos no preparados o rápidos</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="checkPrintR-1"
+                                        name="opciones2"><label class="form-check-label" for="formCheck-1">Si</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="checkPrintR-2"
+                                        name="opciones2"><label class="form-check-label" for="formCheck-1">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group"><label>Login en cada pantalla</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="checkLogin-1"
+                                        name="opciones3"><label class="form-check-label" for="formCheck-1">Si</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="checkLogin-2"
+                                        name="opciones3"><label class="form-check-label" for="formCheck-1">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-8 col-form-label">Tiempo máximo ordenes rápidas (min):</label>
+                            <input id="tOrdenRapida" class="form-control form-control-sm input-estilo col-md-3"
+                                type="text">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-8 col-form-label">Tiempo máximo preparación de orden(min):</label>
+                            <input id="tPreparadoOrden" class="form-control form-control-sm input-estilo col-md-3"
+                                type="text">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-8 col-form-label">Propina:</label>
+                            <input id="propina"class="form-control form-control-sm input-estilo col-md-3" type="text" name="propinaP">
+                    </div>
+                    </div>
+                    <div class="form-group row justify-content-center mb-4 col-12">
+                        <div class="col col-md-2">
+                            <button class="btn btn-primary col mt-4 rounded" type="submit">
+                                <i class="fas fa-save mr-1"></i>Guardar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="salir">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Salir del sistema</h4><button type="button" class="close"
+                        data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <p>Asegurese que no hay operaciones pendientes en el sistema antes de salir</p>
+                </div>
+                <div class="modal-footer footer-botones-modal"><button class="btn btn-secondary btn-pequenio"
+                        type="button" data-dismiss="modal">Cerrar</button><a class="btn btn-pequenio" href="login.html"
+                        role="button">Salir</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="credencial">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div><i class="fas fa-user-circle icon-modal-credencial"></i>
+                        <form>
+                            <div class="form-group row">
+                                <div class="col-lg-1 col-form-label icon-modal-credencial"><i class="fas fa-user"></i>
+                                </div>
+                                <div class="col-lg-10"><input class="form-control input-estilo" type="text"
+                                        placeholder="Usuario"></div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-1 col-form-label icon-modal-credencial"><i class="fas fa-key"></i>
+                                </div>
+                                <div class="col-lg-10"><input class="form-control input-estilo" type="password"
+                                        placeholder="Pin o contraseña"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer footer-botones-modal"><button class="btn btn-secondary btn-m" type="button"
+                        data-dismiss="modal">Cancelar</button><a id="btn-credencial-aceptar" class="btn btn-mediano"
+                        href="#" role="button">Aceptar</a></div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/parametros.js"></script>
+</body>
+
+</html>

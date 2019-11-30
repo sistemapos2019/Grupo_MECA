@@ -1,0 +1,52 @@
+{
+  "name": "compra",
+  "plural": "Compras",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "fecha": {
+      "type": "date",
+      "required": true
+    },
+    "Ndocumento": {
+      "type": "string"
+    },
+    "NRC": {
+      "type": "string"
+    },
+    "NITDUI": {
+      "type": "string"
+    },
+    "nombreProveedor": {
+      "type": "string",
+      "required": true
+    },
+    "montointerno": {
+      "type": "number",
+      "required": true
+    },
+    "iva": {
+      "type": "number",
+      "required": true
+    },
+    "percepcion": {
+      "type": "number",
+      "required": true
+    },
+    "total": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

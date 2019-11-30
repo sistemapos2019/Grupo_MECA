@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Impresion Termica</title>
+</head>
+<body>
+    <button id="btnImprimir">Imprimir</button>
+</body>
+<script src="jquery-3.1.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+
+        $('#btnImprimir').click(function(){
+            productos = [
+            {
+                "nombre": "Pollo asado",
+                "cantidad": 2
+            },
+            {
+                "nombre": "Coca-cola mediana",
+                "cantidad": 2
+            },
+            {
+                "nombre": "Tres leches",
+                "cantidad": 4
+            }
+        ];
+            console.log(productos);
+            console.log(JSON.stringify(productos));
+          /*  $.ajax({
+                crossDomain: true,
+               url: 'http://localhost:80/imprimirTicket/',
+               type: 'POST',
+               data: JSON.stringify(productos),
+               accept: "application/json",
+                contentType: "application/json",
+                dataType: "json",
+           })
+           .done(function( data, textStatus, jqXHR ) {
+     if ( console && console.log ) {
+         console.log( "La solicitud se ha completado correctamente." );
+     }
+ })
+ .fail(function( jqXHR, textStatus, errorThrown ) {
+     if ( console && console.log ) {
+         console.log( "La solicitud a fallado: " +  textStatus + " "+errorThrown);
+     }
+}); */ 
+
+           fetch('http://localhost:80/imprimirTicket/index.php',{
+               method:'POST',
+               body: JSON.stringify(productos)
+           })
+                .then(res => res.text())
+                .then(data => {
+                    console.log(data)
+                })
+        });
+    });
+</script>
+</html>

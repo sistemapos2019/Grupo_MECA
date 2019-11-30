@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>ResBar</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body>
+        <nav class="navbar navbar-light navbar-expand-md">
+                <div class="container-fluid"><a class="navbar-brand" href="dashboard.html">ResBar</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="dashboard.html">Inicio</a></li>
+                            <li id="Administrar" class="nav-item dropdown">
+                                <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false"  href="#">Administrar</a>
+                                <div class="dropdown-menu" role="menu">
+                                    <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('bitacora.html')">Bitacora</a>
+                                    <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('categorias.html')">Categorias</a>
+                                    <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('mesas.html')">Mesas</a>
+                                    <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('parametros.html')">Parámetros</a>
+                                    <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('productos.html')">Productos</a>
+                                    <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('registrarCompras.html')">Registrar Compras&nbsp;</a>
+                                    <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('usuario.html')">Usuarios</a></div>
+                            </li>
+                            <li id="Estadisticas" class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Estadisticas</a>
+                                <div class="dropdown-menu" role="menu">
+                                    <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" id="inventario" onclick="redirigir('inventario.html')">Inventario</a>
+                                    <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" id="reporteCompras" onclick="redirigir('reportesCompras.html')">Reportes de compras</a>
+                                    <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" id="reporteVentas" onclick="redirigir('reporteVentas.html')">Reportes de ventas</a>
+                                    <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" id="ventasDiarias" onclick="redirigir('ventasDiarias.html')">Ventas Diarias</a>
+                                    <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" id="ventasSemanales" onclick="redirigir('ventasSemanales.html')">Ventas semanales</a></div>
+                            </li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" data-toggle="modal" href="#salir">Salir</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+        <div class="container">
+                <div class="row mt-2" id="cabecera">
+                    <div class="col">
+                        <h1>Ordenes activas</h1>
+                    </div>
+                </div>
+                <div class="row justify-content-center" id="busqueda">
+                    <div class="col col-lg-6 mb-2"><i class="fas fa-search"></i>
+                        <input id="searchFiltro" type="search" class="col-lg-11 input-estilo" placeholder="buscar...">
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col contenedor">
+                        <div class="table-responsive">
+                            <table id="tblOrdenesActivas" class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Orden</th>
+                                        <th>Mesa</th>
+                                        <th>Mesero</th>
+                                        <th>Cliente</th>
+                                        <th>Total</th>
+                                        <th>Rapido</th>
+                                        <th>Preparado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col col-lg-2"  ><button onclick="crearOrden()" class="btn btn-primary btn-normal shadow rounded" href="#" type="button" id="crear" data-whatever="crearOrden.html" ><i class="fas fa-plus-square mr-1"></i>Crear orden</button></div>
+                    <div class="col col-lg-2"><button onclick="ampliarOrden()" class="btn btn-primary btn-normal shadow rounded" ><i class="fa fa-cart-plus mr-1" ></i>Ampliar orden</button></div>
+                    <div class="col col-lg-2"><button onclick="modificarOrden()" class="btn btn-primary btn-normal shadow rounded" href="#" type="button" onclick="au"><i class="fas fa-edit mr-1"></i>Modificar orden</button></div>
+                    <div id="cobrar" class="col col-lg-2"><button onclick="cobrarOrden()" class="btn btn-primary btn-normal shadow rounded" href="#" type="button" id="btnCobrar"><i class="far fa-money-bill-alt mr-1"></i>Cobrar orden</button></div>
+                    <div
+                        class="col col-lg-2"><button onclick="facturaCobro()" class="btn btn-primary btn-normal shadow rounded" type="button"><i class="fas fa-print mr-1"></i>Imprimir ticket</button></div>
+            </div>
+            </div>
+            <div class="modal fade" role="dialog" tabindex="-1" id="modalCobrar">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Cobrar orden</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            </div>
+                        <div class="modal-body">
+                            <div class="form-group row justify-content-start">
+                                <label class="col-lg-3 col-form-label">Orden:</label>
+                                <div class="col-lg-5">
+                                    <input type="text" class="col input-estilo" disabled="">
+                                </div>
+                            </div>
+                            <div class="form-group row justify-content-start">
+                                <label class="col-lg-3 col-form-label">Subtotal:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="col input-estilo" disabled="">
+                                </div>
+                            </div>
+                            <div class="form-group row justify-content-start"><label class="col-lg-3 col-form-label">Propina:</label>
+                                <div class="col-lg-6"><input type="text" class="col input-estilo"></div>
+                            </div>
+                            <div class="form-group row justify-content-start"><label class="col-lg-3 col-form-label">Efectivo:</label>
+                                <div class="col-lg-6"><input type="text" class="col input-estilo"></div>
+                            </div>
+                            <div class="form-group row justify-content-start"><label class="col-lg-3 col-form-label">Cambio:</label>
+                                <div class="col-lg-6"><input type="text" class="col input-estilo" disabled=""></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer footer-botones-modal"><button class="btn btn-secondary btn-mediano" type="button"  data-dismiss="modal" id="cancelarCobrar" >Cancelar</button> <button id="btn-credencial-aceptar" class="btn btn-primary btn-mediano" type="button">Cobrar</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" role="dialog" tabindex="-1" id="credencial">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div><i class="fas fa-user-circle icon-modal-credencial"></i>
+                                <form id="loguear">
+                                    <div class="form-group row">
+                                        <div class="col-lg-1 col-form-label icon-modal-credencial"><i class="fas fa-user"></i></div>
+                                        <div class="col-lg-10"><input class="form-control input-estilo" type="text" id="user" placeholder="Usuario"></div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-1 col-form-label icon-modal-credencial"><i class="fas fa-key"></i></div>
+                                        <div class="col-lg-10"><input class="form-control input-estilo" type="password" id="pass" placeholder="Pin o contraseña"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer footer-botones-modal"><button class="btn btn-secondary btn-m" type="button" data-dismiss="modal">Cancelar</button><button class="btn btn-primary" id="btnCredencial" onclick="autenticacion()">Aceptart</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" role="dialog" tabindex="-1" id="salir">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Salir del sistema</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                        <div class="modal-body">
+                            <p>Asegurese que no hay operaciones pendientes en el sistema antes de salir</p>
+                        </div>
+                        <div class="modal-footer footer-botones-modal"><button class="btn btn-secondary btn-pequenio" type="button" data-dismiss="modal">Cerrar</button><button class="btn btn-primary" type="button" onclick="cerrarSesion()">Cerrar sesion</button></div>
+                    </div>
+                </div>
+            </div>
+            <!-- cesar -->
+            <div class="modal fade" role="dialog" tabindex="-1" id="cobrarOrden">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Cobrar orden</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">×</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group row justify-content-start">
+                                <label class="col-lg-2 col-form-label">Orden:</label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="col input-estilo" readonly="readonly" id="idOrdenCo">
+                                </div>
+            
+                                <label class="col-lg-2 col-form-label">Subtotal:</label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="col input-estilo" readonly="readonly" id="subtotalCo">
+                                </div>
+                            </div>
+                            <div class="form-group row justify-content-start">
+                                <label class="col-lg-2 col-form-label">Propina:</label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="col input-estilo" readonly="readonly" id="propinaCo">
+                                </div>
+                                <label class="col-lg-2 col-form-label">Total:</label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="col input-estilo" readonly="readonly" id="totalResumen">
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>Producto</th>
+                                            <th>Cantidad</th>
+                                            <th>Precio</th>
+                                            <th>Subtotal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tblResumenCobrar">
+            
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td></td>
+                                            <td class="text-right" colspan="3">Total:</td>
+                                            <td id="modalTotalResumen"> </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer footer-botones-modal">
+                            <button class="btn btn-primary btn-mediano" type="button" id="okCobrarOrden">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" role="dialog" tabindex="-1" id="cambioCobrar">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Cambio orden</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">×</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group row justify-content-start">
+                                <label class="col-lg-3 col-form-label">Efectivo:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="col input-estilo" id="efectivoCambio">
+                                </div>
+                            </div>
+                            <div class="form-group row justify-content-start">
+                                <label class="col-lg-3 col-form-label">Total:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="col input-estilo" readonly="readonly" id="totalCambio">
+                                </div>
+                            </div>
+                            <div class="form-group row justify-content-start">
+                                <label class="col-lg-3 col-form-label">Cambio:</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="col input-estilo" readonly="readonly" id="cambioCambio"></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer footer-botones-modal">
+                            <button class="btn btn-primary btn-mediano" type="button" id="cambioOrdenM">Cambio</button>
+                            <button class="btn btn-primary btn-mediano" type="button" id="cobrarOrdenM" disabled>Cobrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+            <script src="assets/js/dashboard.js"></script>
+
+
+</body>
+        
+</html>

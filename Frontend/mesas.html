@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>ResBar</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md">
+        <div class="container-fluid"><a class="navbar-brand" href="dashboard.html">ResBar</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="dashboard.html">Inicio</a></li>
+                    <li id="Administrar" class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false"  href="#">Administrar</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('bitacora.html')">Bitacora</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('categorias.html')">Categorias</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('mesas.html')">Mesas</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('parametros.html')">Parámetros</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('productos.html')">Productos</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('registrarCompras.html')">Registrar Compras&nbsp;</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" onclick="redirigir('usuario.html')">Usuarios</a></div>
+                    </li>
+                    <li id="Estadisticas" class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Estadisticas</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" id="inventario" onclick="redirigir('inventario.html')">Inventario</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" id="reporteCompras" onclick="redirigir('reportesCompras.html')">Reportes de compras</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" id="reporteVentas" onclick="redirigir('reporteVentas.html')">Reportes de ventas</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" id="ventasDiarias" onclick="redirigir('ventasDiarias.html')">Ventas Diarias</a>
+                            <a class="dropdown-item" role="presentation" data-toggle="modal" href="#" id="ventasSemanales" onclick="redirigir('ventasSemanales.html')">Ventas semanales</a></div>
+                    </li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" data-toggle="modal" href="#salir">Salir</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row mt-2" id="cabecera">
+            <div class="col">
+                <h1>Mesas</h1>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col contenedor">
+                <div class="table-responsive text-center">
+                    <table id="tblMesas" class="table table-hover table-sm">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0001</td>
+                                <td>Mesa1</td>
+                            </tr>
+                            <tr>
+                                <td>0002</td>
+                                <td>Mesa2</td>
+                            </tr>
+                            <tr>
+                                <td>0003</td>
+                                <td>Mesa3</td>
+                            </tr>
+                            <tr>
+                                <td>0004</td>
+                                <td>Mesa3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col col-md-3 col-lg-2"><button id="Agregar" class="btn btn-primary col" type="button" data-toggle="modal" data-target="#mesasA"><i class="fas fa-plus-circle mr-1"></i>Agregar</button></div>
+            <div class="col col-md-3 col-lg-2"><button id="Editar" class="btn btn-primary col" type="button" data-toggle="modal" data-target="#mesasE"><i class="fas fa-edit mr-1"></i>Modificar</button></div>
+            <div class="col col-md-3 col-lg-2"><button id="Eliminar" class="btn btn-primary col" type="button"><i class="fas fa-trash-alt mr-1"></i>Eliminar</button></div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="salir">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Salir del sistema</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <p>Asegurese que no hay operaciones pendientes en el sistema antes de salir</p>
+                </div>
+                <div class="modal-footer footer-botones-modal"><button class="btn btn-secondary btn-pequenio" type="button" data-dismiss="modal">Cerrar</button><a class="btn btn-pequenio" href="login.html" role="button">Salir</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="credencial">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div><i class="fas fa-user-circle icon-modal-credencial"></i>
+                        <form>
+                            <div class="form-group row">
+                                <div class="col-lg-1 col-form-label icon-modal-credencial"><i class="fas fa-user"></i></div>
+                                <div class="col-lg-10"><input class="form-control input-estilo" type="text" placeholder="Usuario"></div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-1 col-form-label icon-modal-credencial"><i class="fas fa-key"></i></div>
+                                <div class="col-lg-10"><input class="form-control input-estilo" type="password" placeholder="Pin o contraseña"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer footer-botones-modal"><button class="btn btn-secondary btn-m" type="button" data-dismiss="modal">Cancelar</button><a id="btn-credencial-aceptar" class="btn btn-mediano" href="#" role="button">Aceptar</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="mesasA">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Agregar mesa</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <form onsubmit="guardarMesa(event)">
+                        <div class="form-group row"><input class="form-control input-estilo col-md-3" type="hidden"></div>
+                        <div class="form-group row"><label class="col-md-3 col-form-label">Mesa:</label><input id="mesaA" class="form-control input-estilo col-md-7" type="text" required ></div>
+                        <hr class="my-4">
+                        <div class="form-group row justify-content-end"><button class="btn btn-secondary btn-mediano mr-3" type="button" data-dismiss="modal">Cancelar</button><button class="btn btn-primary btn-mediano mr-3" type="submit">Guardar</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="mesasE">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Editatr mesa</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <form onsubmit="guardarMesa(event)">
+                        <div class="form-group row"><input class="form-control input-estilo col-md-3" type="hidden"></div>
+                        <div class="form-group row"><label class="col-md-3 col-form-label">Mesa:</label><input id="mesaE" class="form-control input-estilo col-md-7" type="text" required ></div>
+                        <hr class="my-4">
+                        <div class="form-group row justify-content-end"><button class="btn btn-secondary btn-mediano mr-3" type="button" data-dismiss="modal">Cancelar</button><button class="btn btn-primary btn-mediano mr-3" type="submit">Guardar</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/mesas.js"></script>
+</body>
+
+</html>

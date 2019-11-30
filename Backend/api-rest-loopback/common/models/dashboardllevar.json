@@ -1,0 +1,34 @@
+{
+  "name": "dashboardllevar",
+  "plural": "DashboardLlevar",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "idOrden": {
+      "type": "number",
+      "required": true
+    },
+    "Mesero": {
+      "type": "string",
+      "required": true
+    },
+    "Cliente": {
+      "type": "string",
+      "required": true
+    },
+    "Total": {
+      "type": "number"
+    },
+    "Estado": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
