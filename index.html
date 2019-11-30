@@ -1,0 +1,732 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sistema para Restaurante & Bar</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<span class="logo"><img src="images/logo.svg" alt="" /></span>
+						<h1>RES-BAR</h1>
+						<p>Un sistema para Restaurante & Bar<br />
+						
+					</header>
+
+				<!-- Nav -->
+		<nav id="nav">
+				<ul>
+					<li><a href="#intro" class="active">2. Introdución</a></li>
+					<li><a href="#caracteristicas">3. Caracteristicas</a></li>
+					<li><a href="#instalacion">4. Instalación</a></li>
+					<li><a href="#manual">5. Manual</a></li>
+					<li><a href="#casoDeExito">6. Caso de Éxito</a></li>
+					<li><a href="#footer">7. Pie de pagina</a></li>
+	
+				</ul>
+			</nav>
+	
+				<!-- Main -->
+					<div id="main" >
+
+						<!-- Introduction -->
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2 style="color: rgb(108, 0, 158); font-family: Verdana;">Introducción:<br> Sistema de Restaurante & Bar</h2>
+										</header>
+										<p> <strong>RES-BAR</strong>, es un sistema creado para facilitar la administración de un negocio dedicado a la venta de bebidas, comidas, y cualquier otro producto de consumo al cliente. Especialmente creado para un Restaurante y Bar pero podría adaptarse a cualquier tipo de negocio que ofrezca servicios de comida para las personas (<i>clientes</i>) que consumen en su local o incluso si tienen servicio par a llevar. </p>
+
+										<p></p>
+
+										
+
+
+										<ul class="actions">
+											<li><a href="generic.html" class="button">Leer Mas...</a></li>
+										</ul>
+									</div>
+									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+								</div>
+							</section>
+
+							<!--  CSS PARA EL MODAL-->
+
+			<style>
+				.modalDialog {
+					position: fixed;
+					font-family: Arial, Helvetica, sans-serif;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					background: rgba(0,0,0,0.8);
+					z-index: 99999;
+					opacity:0;
+					-webkit-transition: opacity 400ms ease-in;
+					-moz-transition: opacity 400ms ease-in;
+					transition: opacity 400ms ease-in;
+					pointer-events: none;
+				}
+				.modalDialog:target {
+					opacity:1;
+					pointer-events: auto;
+				}
+				.modalDialog > div {
+					width: 700px;
+					height: 440px;
+					position: relative;
+					margin: 10% auto;
+					padding: 5px 20px 13px 20px;
+					border-radius: 10px;
+					background: #fff;
+					background: -moz-linear-gradient(#fff, #999);
+					background: -webkit-linear-gradient(#fff, #999);
+					background: -o-linear-gradient(#fff, #999);
+				  -webkit-transition: opacity 400ms ease-in;
+				-moz-transition: opacity 400ms ease-in;
+				transition: opacity 400ms ease-in;
+				}
+				.close {
+					background: #606061;
+					color: #FFFFFF;
+					line-height: 25px;
+					position: absolute;
+					right: -12px;
+					text-align: center;
+					top: -10px;
+					width: 24px;
+					text-decoration: none;
+					font-weight: bold;
+					-webkit-border-radius: 12px;
+					-moz-border-radius: 12px;
+					border-radius: 12px;
+					-moz-box-shadow: 1px 1px 3px #000;
+					-webkit-box-shadow: 1px 1px 3px #000;
+					box-shadow: 1px 1px 3px #000;
+				}
+				.close:hover { background: #00d9ff; }
+				</style>
+				
+
+			<!-- Caracteristicas -->
+			<section id="caracteristicas" class="main special">
+				<header class="major">
+						<h2 style="color: rgb(108, 0, 158); font-family: Verdana;">Caracteristicas:<br> Sistema de Restaurante & Bar</h2>
+					</header>
+				<ul class="features">
+					<li>
+							
+
+						<span class="logo"><img src="images/logueo.JPG" width="200" height="130"/></span>
+						<h3>Logueo de Usuarios</h3>
+						<p>El sistema muestra la pantalla principal para el logueo de usuarios para poder acceder al
+							sistema.</p>
+
+							<!--  ABRIREMOS LA IMAGEN DE LOGIN-->
+							<a href="#openModal1">Abrir imagen</a>
+
+							<div id="openModal1" class="modalDialog">
+								<div>
+									<a href="#close" title="Close" class="close">X</a>
+									<h2>Logueo de Usuarios</h2>
+									<span class="logo"><img src="images/logueo.JPG" width="640"	height="360">
+								</div>
+							</div>
+					</li>
+					<li>
+						<span class="logo"><img src="images/dashboard.JPG" width="200" height="130"/></span>
+						<h3>Dashboard de ordenes activas</h3>
+						<p>Nos muestra la pantalla del Dashboard principal de todas las ordenes activas entre las
+							opciones que esta
+							pantalla nos ofrece esta, la de crear orden, ampliar orden, modificar orden, cobrar orden
+							imprimir factura.</p>
+														<!--  ABRIREMOS LA IMAGEN DE ORDENES ACTIVAS-->
+														<a href="#openModal2">Abrir imagen</a>
+
+														<div id="openModal2" class="modalDialog">
+															<div>
+																<a href="#close" title="Close" class="close">X</a>
+																<h2>Dashboard de ordenes activas</h2>
+																<span class="logo"><img src="images/dashboard.JPG" width="640"	height="360">
+															</div>
+														</div>
+					</li>
+					<li>
+						<span class="logo"><img src="images/crearOrden.JPG" width="200" height="130"/></span>
+						<h3>Crear Orden</h3>
+						<p>Permite crear una nueva orden, seleccionar la mesa, ingresar el nombre del cliente, elejir el
+							tipo de
+							la orden si es para comer o llevar.</p>
+
+							<!--  ABRIREMOS LA IMAGEN DE CREAR ORDEN-->
+							<a href="#openModal3">Abrir imagen</a>
+
+							<div id="openModal3" class="modalDialog">
+								<div>
+									<a href="#close" title="Close" class="close">X</a>
+									<h2>Crear Orden</h2>
+									<span class="logo"><img src="images/crearOrden.JPG" width="640"	height="360">
+								</div>
+							</div>
+					</li>
+					<li>
+						<span class="logo"><img src="images/ampliarOrden.JPG" width="200" height="130"/></span>
+						<h3>Ampliar Orden</h3>
+						<p>Tenemos la opcion de ampliar orden; en caso que el cliente desee consumir mas productos estos
+							se
+							pueden seleccionar de las categorias de productos disponibles.</p>
+							<!--  ABRIREMOS LA IMAGEN DE AMPLIAR ORDEN-->
+							<a href="#openModal4">Abrir imagen</a>
+
+							<div id="openModal4" class="modalDialog">
+								<div>
+									<a href="#close" title="Close" class="close">X</a>
+									<h2>Ampliar Orden</h2>
+									<span class="logo"><img src="images/ampliarOrden.JPG" width="640"	height="360">
+								</div>
+							</div>
+					</li>
+					<li>
+						<span class="logo"><img src="images/modificarOrden.JPG" width="200" height="130"/></span>
+						<h3>Modificar Orden</h3>
+						<p>Podemos modificar ordenes pero solo permite quitar o aumentar cantidad de productos, si se
+							quiere
+							agregar nuevos productos a la orden se debe realizar desde ampliar orden. </p>
+
+							<!--  ABRIREMOS LA IMAGEN MODIFICAR ORDEN-->
+							<a href="#openModal5">Abrir imagen</a>
+
+							<div id="openModal5" class="modalDialog">
+								<div>
+									<a href="#close" title="Close" class="close">X</a>
+									<h2>Modificar Orden</h2>
+									<span class="logo"><img src="images/modificarOrden.JPG" width="640"	height="360">
+								</div>
+							</div>
+					</li>
+					<li>
+						<span class="logo"><img src="images/cobrarOrden.JPG" width="200" height="130"/></span>
+						<h3>Cobrar Orden</h3>
+						<p>Permite cobrar las ordenes que se seleccionan.</p>
+						
+							<!--  ABRIREMOS LA IMAGEN COBRAR ORDEN-->
+							<a href="#openModal6">Abrir imagen</a>
+
+							<div id="openModal6" class="modalDialog">
+								<div>
+									<a href="#close" title="Close" class="close">X</a>
+									<h2>Cobrar Orden</h2>
+									<span class="logo"><img src="images/cobrarOrden.JPG" width="640"	height="360">
+								</div>
+							</div>
+					</li>
+					<li>
+						<span class="logo"><img src="images/imprimirTicket.JPG" width="200" height="130"/></span>
+						<h3>Imprimir Ticket</h3>
+						<p>Permite imprimir el ticket de la orden seleccionada.</p>
+						
+							<!--  ABRIREMOS LA IMAGEN IMPRIMIR TITCKET DE LA ORDEN-->
+							<a href="#openModal7">Abrir imagen</a>
+
+							<div id="openModal7" class="modalDialog">
+								<div>
+									<a href="#close" title="Close" class="close">X</a>
+									<h2>Imprimir Ticket</h2>
+									<span class="logo"><img src="images/imprimirTicket.JPG" width="640"	height="360">
+								</div>
+							</div>
+					</li>
+					<li>
+						<span class="logo"><img src="images/administrar.JPG" width="200" height="130"/></span>
+						<h3>Administrar</h3>
+						<p>Permite la administracion de las opciones de bitacoras, categorias, mesas,
+							parametros, productos, registro de compras y usuarios como se muestra en la imagen .</p>
+							
+						
+							<!--  ABRIREMOS LA IMAGEN ADMINISTRAR-->
+							<a href="#openModal8">Abrir imagen</a>
+
+							<div id="openModal8" class="modalDialog">
+								<div>
+									<a href="#close" title="Close" class="close">X</a>
+									<h2>Administrar</h2>
+									<span class="logo"><img src="images/administrar.JPG" width="640"	height="360">
+								</div>
+							</div>
+					</li>
+					<li>
+						<span class="logo"><img src="images/estadisticas.JPG" width="200" height="130"/></span>
+						<h3>Estadisticas</h3>
+						<p>Permite consultar las opciones de inventario, reporte de compras, reporte de ventas,
+							ventas diarias y ventas semanales.</p>
+
+							<!--  ABRIREMOS LA IMAGEN ESTADISTICAS-->
+							<a href="#openModal9">Abrir imagen</a>
+
+							<div id="openModal9" class="modalDialog">
+								<div>
+									<a href="#close" title="Close" class="close">X</a>
+									<h2>Estadisticas</h2>
+									<span class="logo"><img src="images/estadisticas.JPG" width="640"	height="360">
+								</div>
+							</div>
+					</li>
+				</ul>
+				<!--<footer class="major">
+									<ul class="actions special">
+										<li><a href="generic.html" class="button">Learn More</a></li>
+									</ul>
+								</footer>-->
+			</section>
+
+			<!-- Instalación -->
+			<section id="instalacion" class="main special">
+				<header class="major">
+						<h2 style="color: rgb(108, 0, 158); font-family: Verdana;">Instalación:<br> Sistema de Restaurante & Bar</h2>
+
+<h1> <strong>1. Instalaremos MYSQL en nuestra computadora</strong> </h1>					
+	<iframe width="854" height="480" src="https://www.youtube.com/embed/OqlTFxzFkkg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</header>
+
+				<p align="justify">
+					MySQL es un sistema de gestión de bases de datos relacional desarrollado bajo licencia dual: 
+					Licencia pública general/Licencia comercial por Oracle Corporation y está considerada como la base de datos 
+					de código abierto más popular del mundo, y una de las más populares en general junto a Oracle y Microsoft SQL Server, 
+					sobre todo para entornos de desarrollo web.
+				</p>
+				<p align="justify">
+					MySQL es una base de datos muy rápida en la lectura cuando utiliza el motor no transaccional MyISAM, pero puede 
+					provocar problemas de integridad en entornos de alta concurrencia en la modificación. En aplicaciones web hay baja 
+					concurrencia en la modificación de datos y en cambio el entorno es intensivo en lectura de datos, lo que hace a MySQL 
+					ideal para este tipo de aplicaciones. Sea cual sea el entorno en el que va a utilizar MySQL, es importante monitorizar 
+					de antemano el rendimiento para detectar y corregir errores tanto de SQL como de programación.
+				</P>
+
+
+
+
+
+				<h1> <strong>2. Instalaremos Visual Studio Code en nuestra computadora</strong> </h1>					
+
+				<iframe width="854" height="480" src="https://www.youtube.com/embed/dyEJwNDSQKU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+<br>
+				<p align="justify">
+					Visual Studio Code es un editor de código fuente desarrollado por Microsoft para Windows , Linux y macOS. Incluye soporte 
+					para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y 
+					refactorización de código. También es personalizable, por lo que los usuarios pueden cambiar el tema del editor, los
+					 atajos de teclado y las preferencias. Es gratuito y de código abierto, aunque la descarga oficial está bajo software 
+					 propietario requiriendo tus datos de uso del programa legalmente.</p>
+
+
+
+
+					<p align="justify">
+
+
+	Visual Studio Code es un editor de código fuente. Es compatible con varios lenguajes de programación y un conjunto de características 
+	que pueden o no estar disponibles para un idioma dado, como se muestra en la siguiente tabla. Muchas de las características de Visual 
+	Studio Code no están expuestas a través de los menús o la interfaz de usuario. Más bien, se accede a través de la paleta de comandos o 
+	a través de archivos .json (por ejemplo, preferencias del usuario). La paleta de comandos es una interfaz de línea de comandos. 
+	Sin embargo, desaparece si el usuario hace clic fuera de él o presiona una combinación de teclas en el teclado para interactuar con 
+	algo que está fuera de él. Esto también se aplica a los comandos que requieren mucho tiempo. Cuando esto sucede, el comando en progreso
+	 se cancela.
+
+</p>					
+
+
+
+<h1> <strong>3. Instalaremos Node.js y Loopback en nuestra computadora</strong> </h1>	
+
+<iframe width="854" height="480" src="https://www.youtube.com/embed/5kiTdIJlGIc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+<br>
+<p align="justify">
+
+	Node.js es un entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor (pero no limitándose a ello) 
+	basado en el lenguaje de programación ECMAScript, asíncrono, 
+	con I/O de datos en una arquitectura orientada a eventos y basado en el motor V8 de Google. Fue creado con el enfoque de ser útil en 
+	la creación de programas de red altamente escalables, como por ejemplo, servidores web.
+</p>
+<p align="justify">
+
+	<br>
+	El dispositivo de red loopback es una interfaz de red virtual. Las direcciones del rango '127.0.0.0/8' son direcciones de loopback, 
+	de las cuales se utiliza, de forma mayoritaria, la '127.0.0.1' por ser la primera de dicho rango, añadiendo '::1' para el caso de IPv6 
+	('127.0.0.1::1'). Las direcciones de loopback pueden ser redefinidas en los dispositivos, incluso con direcciones IP públicas, una práctica
+	común en los routers. y son usualmente utilizadas para probar la capacidad de la tarjeta interna si se están enviando datos BGP.
+
+</p>
+
+
+				<!--<footer class="major">
+									<ul class="actions special">
+										<li><a href="generic.html" class="button">Learn More</a></li>
+									</ul>
+								</footer>-->
+			</section>
+
+			<!-- Manual -->
+			<section id="manual" class="main special">
+				<header class="major">
+						<h2 style="color: rgb(108, 0, 158); font-family: Verdana;">Manual:<br> Sistema de Restaurante & Bar</h2>
+					
+					<p align="justify">En esta sección se presenta un manual rapido de usuario con las principales
+						opciones para el uso del sistema,
+						mostrando los pasos necesarios para realizar operaciones en el sistema.</p>
+				</header>
+				<header class="">
+					<h2><strong>Configuración de Productos</strong></h2>
+					<p>Esta opción del sistema nos permite la configuración o resgistro de los productos que estaran
+						disponibles en el negocio,
+						asi como tambien la edición y eliminación de estos.
+					</p>
+					<img src="imagesManual/administrarProductos.JPG" height="500" ; width="1000">
+					<strong>
+						<p align="left">Pasos a seguir.</p>
+					</strong>
+					<ol align="left">
+						<li>El Id del producto es autogenerico por lo que no se necesita asignarlo manualmente.</li>
+						<li>En el campo Nombre asignar el nombre del producto a registrar.</li>
+						<li>En el campo Precio se asigna el precio del producto a registrar.</li>
+						<li>Seleccionar una categoria adecuada disponible para el producto a registrar.</li>
+						<li>Dar click en el boton Guardar para que el producto sea guardado en la base de datos, el
+							producto
+							registrado se mostrara en la tabla de la derecha con los campos Id, Poducto, Precio y la
+							Categoria
+							a la cual pertenece.</li>
+						<li>Modificar Productos
+							<img src="imagesManual/modificarProducto.JPG" height="500" ; width="1000">
+							En este paso se debe seleccionar un producto de la tabla anterior y luego dar click en el
+							boton Editar
+							nos aparecera una ventana modal llamada modificar producto, esta ventana tendra todos los
+							campos cargados
+							con los datos correspondientes para poder ser modificados, para guardar cambios en caso que
+							se haya modificado
+							un campo dar click en el boton Guardar caso contrario click en Cancelar.</li>
+						<li>Para eliminar un producto o productos, seleccionarlos de la tabla donde se ven reflejados el
+							registro de estos
+							luego dar click en el boton eliminar.
+						</li>
+					</ol>
+
+				</header>
+
+				<header class="">
+					<h2><strong>Consola Principal</strong></h2>
+					<p>A continuación se describira las caracteristicas del dashboard principal y el dashboard para
+						llevar, estas son las pantallas
+						o vistas principales del sistema para interactuar con las ordenes solicitadas.
+					</p>
+					<strong>
+						<p>Dashboard Principal</p>
+					</strong>
+					<img src="imagesManual/dashPrincipal.JPG" height="500" ; width="1000">
+					<p align="justify">Esta pantalla principal nos permite acceder a una serie de opciones que nos
+						permite la interaccion con el sistema para realizar porcesos
+						como: crear una orden, ampliar ordenes, modificar ordenes, cobrar ordenes, impresion de la
+						factura del cliente; proporciona tambien un
+						buscador de ordenes activas esto es util en caso que se tengan varias ordes acitivas listadas,
+						como se observa el sistema es capaz
+						medir el tiempo que ha transcurrido desde que se solicito la orden esto es importante por que
+						esto permite llevar el control del tiempo
+						de espera de los clientes de esta forma se busca brindar un mejor servicio.
+					</p>
+
+					<strong>
+						<p>Dashboard para Llevar</p>
+					</strong>
+					<img src="imagesManual/dashLlevar.JPG" height="500" ; width="1000">
+					<p align="justify">En esta pantalla se listan todas las ordenes que ha sido solicitadas por los
+						clientes, estas como tal son para llevar
+						lo que significa que no hay mesas en uso en este tipo de orden; de igual forma que el dashboard
+						principal esta nos
+						permite buscar ordenes para llevar en caso que se tengan varias de estas listadas y tambien nos
+						muestra el tiempo
+						que ha transcurrido desde que se solicito la orden.</p>
+				</header>
+
+				<header class="">
+					<h2><strong>Crear Orden</strong></h2>
+					<p>Esta opción del sistema nos permite la creacion de ordenes de una forma muy facil para los
+						usuarios registrados
+					</p>
+					<img src="imagesManual/crearOrden.JPG" height="500" ; width="1000">
+					<strong>
+						<p align="left">Pasos a seguir.</p>
+					</strong>
+					<ol align="left">
+						<li>En el dashboard principal dar click en el boton Crear Orden, nos motrara la patalla Crear
+							Nueva Orden</li>
+						<li>El Id de la orden es autogenerico por lo que no se necesita asignarlo manualmente</li>
+						<li>En el campo Mesa seleccionar la mesa que el cliente eligio, la seleccion de esta depende del
+							tipo de orden solicitada</li>
+						<li>En el campo Cliente se asigna el nombre del cliente a atender </li>
+						<li>El campo Mesero se autocompleta con el registro que este hace a la hora de crear una orden
+						</li>
+						<li>Seleccionar el tipo de orden a crear puede ser para comer o para llevar</li>
+						<li>Seleccionar de las categorias disponibles los productos que los clientes piden en sus
+							ordenes</li>
+						<p>En la tabla donde se listan los productos seleccionados se puede observar algunos campos que
+							describen a los productos
+							los campos disminuir y aumentar permiten quitar o agregar cantidad de un mismo producto </p>
+						<li>Para que la orden se procese dar click en el boton Aceptar, seguidamente se mostrara una
+							ventana modal con el resumen de
+							la orden creada la cual detalla el numero de la orden, el mesero que atendio la orden, el
+							cliente, el producto, la cantidad, el
+							precio unitario y el subtotal de la orden
+						</li>
+						<li>Para confirmar definitivamente la orden creada dar click en el boton Agregar, esta se
+							agregara a la vista de ordenes activas</li>
+						<img src="imagesManual/resumen.JPG" height="500" ; width="1000">
+					</ol>
+				</header>
+
+				<header class="">
+					<h2><strong>Agregar productos a una orden</strong></h2>
+					<p>Esta opción del sistema nos permite agregar o ampliar una orden existente con nuevos productos
+						solicitados por los clientes
+					</p>
+					<img src="imagesManual/ampliarOrden.JPG" height="500" ; width="1000">
+					<strong>
+						<p align="left">Pasos a seguir.</p>
+					</strong>
+					<ol align="left">
+						<li>Para acceder a esta funcionalidad la orden debe ser seleccionada desde el dashboard
+							principal, luego dar clik en el boton
+							Ampliar Orden, nos cargara la pantalla Ampliar orden, los campos de los datos de la orden
+							aparacen ya llenos
+						</li>
+						<li>Seleccionar de las categorias disponibles los nuevos productos a asignar a una orden ya
+							existente, de igual forma se puede
+							disminuir o aumentar cantidad de productos, permite visualizar el nuevo producto que se
+							agregara con su precio unitario
+						</li>
+						<li>Para que la asignación de los nuevos productos se procesen dar click en el boton Aceptar,
+							seguidamente se mostrara una ventana modal con el resumen de
+							los nuevos productos asignados a la orden ya existente
+						</li>
+						<img src="imagesManual/resumen.JPG" height="500" ; width="1000">
+						<li>Para confirmar definitivamente la asignación de los nuevos productos dar click en el boton
+							Agregar, estos productos se asignaran a la orden ya existente</li>
+
+					</ol>
+				</header>
+
+				<header class="">
+					<h2><strong>Cobrar orden</strong></h2>
+					<p>Esta funcionalidad permite cobrar las ordenes que se realizaron
+					</p>
+					<img src="imagesManual/cobrarOrden.JPG" height="500" ; width="1000">
+					<strong>
+						<p align="left">Pasos a seguir.</p>
+					</strong>
+					<ol align="left">
+						<li>La orden que se desea cobrar se debe seleccionar desde el dashboard principal</li>
+						<li>Luego dar click en el boton Cobrar orden, nos mostrara una ventana modal llamada Cobrar
+							Orden, esta ventana muestra los
+							campos Orden, SubTotal de la orden, la propina, el efectivo que adquirimos de los clientes y
+							el campo cambio este muestra
+							el cambio que se le dara al cliente si existe tal cambio
+						</li>
+						<li>Para que el cobro de la orden se confirme dar click en el boton Cobrar
+						</li>
+					</ol>
+				</header>
+
+				<header class="">
+					<h2><strong>Orden para Llevar</strong></h2>
+					<p>Esta funcionalidad se accede desde el dasboard principal la cual permite crear ordenes para comer
+						o llevar en este caso haremos enfasis en este tipo de orden
+						las ordenes para llevar se asigna al dashboard para llevar, es ahi donde se muestran todas las
+						ordenes creadas de este tipo
+					</p>
+					<img src="imagesManual/dashLlevar.JPG" height="500" ; width="1000">
+					<strong>
+						<p align="left">Pasos a seguir.</p>
+					</strong>
+					<img src="imagesManual/ordenLlevar.JPG" height="500" ; width="1000">
+					<ol align="left">
+						<li>En el dashboard principal dar click en el boton Crear Orden, nos motrara la patalla Crear
+							Nueva Orden</li>
+						<li>El Id de la orden es autogenerico por lo que no se necesita asignarlo manualmente</li>
+						<li>En el campo mesa no se selecciona nada puesto que la orden es para llevar</li>
+						<li>En el campo Cliente se asigna el nombre del cliente a atender </li>
+						<li>El campo Mesero se autocompleta con el registro que este hace a la hora de crear una orden
+						</li>
+						<li>Seleccionar el tipo de orden a crear en este caso para llevar</li>
+						<li>Seleccionar de las categorias disponibles los productos que los clientes piden en sus
+							ordenes En la tabla donde
+							se listan los productos seleccionados se puede observar algunos campos que describen a los
+							productos
+							los campos disminuir y aumentar permiten quitar o agregar cantidad de un mismo producto</li>
+						<li>Para que la orden se procese dar click en el boton Aceptar, seguidamente se mostrara una
+							ventana modal con el resumen de
+							la orden creada la cual detalla el numero de la orden, el mesero que atendio la orden, el
+							cliente, el producto, la cantidad, el
+							precio unitario y el subtotal de la orden
+						</li>
+						<li>Para confirmar definitivamente la orden creada dar click en el boton Agregar, esta se
+							agregara a la vista de ordenes para llevar</li>
+					</ol>
+				</header>
+
+				<!--<footer class="major">
+										<ul class="actions special">
+											<li><a href="generic.html" class="button">Learn More</a></li>
+										</ul>
+									</footer>-->
+			</section>
+
+			<!-- Caso de Éxito -->
+			<section id="casoDeExito" class="main special">
+				<header class="major">
+						<h2 style="color: rgb(108, 0, 158); font-family: Verdana;">Caso de Éxito:<br> Sistema de Restaurante & Bar</h2>
+
+					<p>Falta completar esta parte</p>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/xuHtBhfO3Fs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</header>
+
+				<p align="justify">Como su equipo va a realizar una implementación del sistema, aquí colocará un video
+					que muestre su sistema corriendo
+					en el lugar donde decidió implementarlo, este video mostrara ese negocio local real que va a
+					utilizar el sistema o que lo esta
+					utilizando ya.
+
+
+				</p>
+				<!--<footer class="major">
+										<ul class="actions special">
+											<li><a href="generic.html" class="button">Learn More</a></li>
+										</ul>
+									</footer>-->
+			</section>
+
+			<!-- Pie de Página 
+							<section id="pieDePagina" class="main special">
+									<header class="major">
+										<h2> Pie de Página</h2>
+										<p>Falta completar esta parte</p>
+									</header>
+									
+									<p align="justify">sss
+											
+											
+									</p>
+									<footer class="major">
+										<ul class="actions special">
+											<li><a href="generic.html" class="button">Learn More</a></li>
+										</ul>
+									</footer>
+								</section>
+							-->
+
+			<!-- Get Started -->
+			
+
+
+					
+				</footer>
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		
+		<footer id="footer">
+			<section>
+				<h2><strong>Datos referidos al proyecto</strong></h2>
+				<ul>
+					<li><strong>Nombre del Sistema:</strong> Resvar </li>
+					<li><strong>Lugar de Desarollo:</strong> El Salvador C.A, Departamento de Santa Ana</li>
+					<li><strong>Materia:</strong> Diseño de Sistemas II</li>
+					<li><strong>Universidad:</strong> Universidad de El Salvador</li>
+
+
+				</ul>
+
+
+
+				<!--	<ul class="actions">
+								<li><a href="generic.html" class="button">Learn More</a></li>
+							</ul>-->
+			</section>
+			<section>
+				<h2><strong>Nombres y contactos de los desarrolladores</strong></h2>
+				<dl class="alt">
+						<li><strong>Nombre:</strong> Mateo Abraham Contreras</li>
+						<li><strong>Télefono:</strong> (503) 0000-0000</li>
+						<li><strong>Email:</strong> <a href="#">information@untitled.tld</a></li>
+						<li><strong>Facebook:</strong> <a href="#">facebook.com/</a></li>
+
+					<!--<ul class="icons">								
+								<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>								
+							</ul>-->
+				</dl>
+
+				<dl class="alt">
+						<li><strong>Nombre:</strong> Cesar Soriano</li>
+						<li><strong>Télefono:</strong> (503) 0000-0000</li>
+						<li><strong>Email:</strong> <a href="#">information@untitled.tld</a></li>
+						<li><strong>Facebook:</strong> <a href="#">facebook.com/</a></li>
+
+					<!--<ul class="icons">								
+								<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>								
+							</ul>-->
+				</dl>
+				<dl class="alt">
+						<li><strong>Nombre:</strong> William Cubas</li>
+						<li><strong>Télefono:</strong> (503) 0000-0000</li>
+						<li><strong>Email:</strong> <a href="#">information@untitled.tld</a></li>
+						<li><strong>Facebook:</strong> <a href="#">facebook.com/</a></li>
+
+					<!--<ul class="icons">								
+								<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>								
+							</ul>-->
+				</dl>
+				
+					<dl class="alt">
+							<li><strong>Nombre:</strong> Misael Eduardo Herrera Gonzalez</li>
+							<li><strong>Télefono:</strong> (503) 0000-0000</li>
+							<li><strong>Email:</strong> <a href="#">information@untitled.tld</a></li>
+							<li><strong>Facebook:</strong> <a href="#">https://www.facebook.com/h10Eduardo/</a></li>
+	
+						<!--<ul class="icons">								
+									<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>								
+								</ul>-->
+					</dl>
+					
+			</section>
+			<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
