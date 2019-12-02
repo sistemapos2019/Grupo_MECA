@@ -5,5 +5,5 @@
   - William Alfredo Cubas Monroy
   - Figueroa Contreras Mateo Abrahan
 
-# Página 
+# Página web
 https://sistemapos2019.github.io/Grupo_MECA/
