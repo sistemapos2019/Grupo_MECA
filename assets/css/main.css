@@ -2352,12 +2352,18 @@ input, select, textarea {
 		color: #ffffff;
 	}
 
-		.icon.alt:hover {
-			background-color: rgba(255, 255, 255, 0.075);
+		.icon.alt.bg-facebook:hover {
+			background-color: rgba(59, 89, 152, 0.3);
+		}
+		.icon.alt.bg-github:hover {
+			background-color: rgba(0,0, 0, 0.3);
 		}
 
-		.icon.alt:active {
-			background-color: rgba(255, 255, 255, 0.2);
+		.icon.alt.bg-facebook:active {
+			background-color: rgba(59, 89, 152, 0.3);
+		}
+		.icon.alt.bg-github:active {
+			background-color: rgba(0,0, 0, 0.3);
 		}
 
 /* Image */
@@ -3783,3 +3789,10 @@ input, select, textarea {
 			}
 
 		}
+
+.bg-facebook{
+	background-color: #3b5998;
+}
+.bg-github{
+	background-color: black;
+}
